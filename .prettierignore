@@ -3,3 +3,7 @@ pnpm-lock.yaml
 node_modules
 dist
 build
+tsconfig.json
+scripts
+README.md
+postcss.config.mjs
