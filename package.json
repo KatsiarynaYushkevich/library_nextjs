@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "seed": "node --loader ts-node/esm scripts/seed_db.ts",
+    "seed": "node --loader ts-node/esm src/scripts/seed_db.ts",
     "prepare": "husky"
   },
   "dependencies": {
