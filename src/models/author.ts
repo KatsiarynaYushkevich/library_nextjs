@@ -1,7 +1,12 @@
-import mongoose from "mongoose"
-const { Schema } = mongoose
+import { Schema, model } from "mongoose"
 
-const authorSchema = new Schema(
+export interface IAuthor {
+  name: string
+  bio: string
+  birthDay: Date
+}
+
+export const authorSchema = new Schema<IAuthor>(
   {
     name: {
       type: String,
@@ -20,4 +25,4 @@ const authorSchema = new Schema(
   }
 )
 
-export const Author = mongoose.model("Author", authorSchema)
+export const Author = model<IAuthor>("Author", authorSchema)

@@ -1,7 +1,16 @@
-import mongoose from "mongoose"
-const { Schema } = mongoose
+import { Schema, Types, model } from "mongoose"
 
-const bookSchema = new Schema(
+export interface IBook {
+  title: string
+  description: string
+  year: number
+  rating: number
+  authorId: Types.ObjectId
+  genres: []
+  imageUrl?: string
+}
+
+export const bookSchema = new Schema(
   {
     title: {
       type: String,
@@ -50,4 +59,4 @@ const bookSchema = new Schema(
   }
 )
 
-export const Book = mongoose.model("Book", bookSchema)
+export const Book = model("Book", bookSchema)
