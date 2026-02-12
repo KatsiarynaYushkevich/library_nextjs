@@ -21,9 +21,10 @@
     ],
     "paths": {
       "@/*": ["./*"],
-      "@lib/*": ["./lib/*"],
+      "@lib/*": ["./src/lib/*"],
       "@services/*": ["./src/services/*"],
-      "@constants/*": ["./src/constants/*"]
+      "@constants/*": ["./src/constants/*"],
+      "@models/*": ["./src/models/*"]
     }
   },
   "include": [

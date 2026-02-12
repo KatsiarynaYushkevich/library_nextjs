@@ -1,6 +1,7 @@
 import { Schema, Types, model } from "mongoose"
 
 export interface IBook {
+  _id: string
   title: string
   description: string
   year: number
