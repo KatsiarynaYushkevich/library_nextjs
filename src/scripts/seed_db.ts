@@ -19,6 +19,7 @@ function randomBetween(min: number, max: number) {
 
 function round2(num: number) {
   return Math.round(num * 100) / 100
+
 }
 
 function dateMsAgo(ms: number) {
