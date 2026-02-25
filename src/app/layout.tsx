@@ -9,7 +9,9 @@ export const metadata: Metadata = {
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <div className="w-full h-dvh flex justify-center align-center">{children}</div>
+      </body>
     </html>
   )
 }

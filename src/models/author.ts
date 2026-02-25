@@ -1,9 +1,11 @@
 import { Schema, model } from "mongoose"
 
 export interface IAuthor {
+  _id: string
   name: string
   bio: string
   birthDay: Date
+  imageUrl: string
 }
 
 export const authorSchema = new Schema<IAuthor>(
@@ -19,7 +21,13 @@ export const authorSchema = new Schema<IAuthor>(
       trim: true,
     },
     birthDay: Date,
+    imageUrl: {
+      type: String,
+      trim: true,
+      default: "images/svg/default-picture.svg",
+    },
   },
+
   {
     timestamps: true,
   }

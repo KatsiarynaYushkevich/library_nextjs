@@ -8,7 +8,7 @@ export interface IBook {
   rating: number
   authorId: Types.ObjectId
   genres: []
-  imageUrl?: string
+  imageUrl: string
 }
 
 export const bookSchema = new Schema(
@@ -52,7 +52,7 @@ export const bookSchema = new Schema(
     imageUrl: {
       type: String,
       trim: true,
-      default: "",
+      default: "images/svg/default-picture.svg",
     },
   },
   {
