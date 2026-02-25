@@ -24,7 +24,8 @@
       "@lib/*": ["./src/lib/*"],
       "@services/*": ["./src/services/*"],
       "@constants/*": ["./src/constants/*"],
-      "@models/*": ["./src/models/*"]
+      "@components/*": ["./src/components/*"],
+      "@models/*": ["./src/models/*"],
     }
   },
   "include": [
