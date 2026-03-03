@@ -14,7 +14,7 @@ start-dev:
 
 # Запустить все сервисы, если нужно — пересоберёт образы
 up-dev:
-	docker compose -f $(DEV_COMPOSE_FILE) up -d --build && pnpm run dev
+	docker compose -f $(DEV_COMPOSE_FILE) up -d --build 
 
 # Остановить и удалить все контейнеры, сети, тома, созданные compose
 down-dev:

@@ -6,6 +6,14 @@ export interface IAuthor {
   bio: string
   birthDay: Date
   imageUrl: string
+  createdAt: Date
+  updatedAt: Date
+}
+
+export interface IAuthorSerialized extends Omit<IAuthor, "_id" | "createdAt" | "updatedAt"> {
+  _id: string
+  createdAt: string
+  updatedAt: string
 }
 
 export const authorSchema = new Schema<IAuthor>(

@@ -1,4 +1,4 @@
-import { IAuthor } from "@models/author"
+import { IAuthorSerialized } from "@models/author"
 import ItemCard from "@components/card/itemCard"
 import { getAuthors } from "@services/author.service"
 
@@ -6,7 +6,7 @@ export default async function AuthorsPage() {
   const authors = await getAuthors()
   return (
     <>
-      {authors.map((author: IAuthor) => (
+      {authors.map((author: IAuthorSerialized) => (
         <ItemCard
           key={author._id}
           className="

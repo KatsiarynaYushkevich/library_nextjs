@@ -1,5 +1,5 @@
 import { getBooks } from "@services/book.service"
-import { IBook } from "@models/book"
+import { IBookSerialized } from "@models/book"
 import ItemCard from "@components/card/itemCard"
 import { StarIcon } from "@heroicons/react/24/outline"
 
@@ -7,7 +7,7 @@ export default async function BookPage() {
   const books = await getBooks()
   return (
     <>
-      {books.map((book: IBook) => (
+      {books.map((book: IBookSerialized) => (
         <ItemCard
           key={book._id}
           className="bg-gray-800 rounded-2xl p-4 border border-gray-700 
