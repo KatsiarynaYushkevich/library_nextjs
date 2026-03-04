@@ -1,12 +1,11 @@
+"use cache"
 import { connectDB } from "@lib/db"
 import { Author, IAuthor, IAuthorSerialized } from "@models/author"
-import { cacheLife, cacheTag } from "next/cache"
+import { cacheLife } from "next/cache"
 
 export async function getAuthors(): Promise<IAuthorSerialized[]> {
-  "use cache"
+  cacheLife("hours")
 
-  cacheTag("authors")
-  cacheLife({ revalidate: 120 })
   await connectDB()
 
   const authors = await Author.find().lean<IAuthor[]>()

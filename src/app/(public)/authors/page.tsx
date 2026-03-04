@@ -5,7 +5,7 @@ import { getAuthors } from "@services/author.service"
 export default async function AuthorsPage() {
   const authors = await getAuthors()
   return (
-    <>
+    <div className="w-4/5 sm:w-3/4 md:w-2/3 gap-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 mx-auto">
       {authors.map((author: IAuthorSerialized) => (
         <ItemCard
           key={author._id}
@@ -14,7 +14,7 @@ export default async function AuthorsPage() {
     rounded-2xl overflow-hidden
     shadow-md hover:shadow-xl
     transition-all duration-300
-    flex flex-col h-full
+    flex flex-col min-h-[20]
     border-2 border-amber-600
   "
         >
@@ -33,6 +33,6 @@ export default async function AuthorsPage() {
           </div>
         </ItemCard>
       ))}
-    </>
+    </div>
   )
 }

@@ -6,7 +6,7 @@ import { StarIcon } from "@heroicons/react/24/outline"
 export default async function BookPage() {
   const books = await getBooks()
   return (
-    <>
+    <div className="w-4/5 sm:w-3/4 md:w-2/3 gap-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 mx-auto">
       {books.map((book: IBookSerialized) => (
         <ItemCard
           key={book._id}
@@ -46,6 +46,6 @@ export default async function BookPage() {
           </ItemCard.Description>
         </ItemCard>
       ))}
-    </>
+    </div>
   )
 }
