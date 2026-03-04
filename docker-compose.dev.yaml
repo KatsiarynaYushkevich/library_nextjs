@@ -1,24 +1,26 @@
-services:
-    dev-mongodb:
-        image: mongo:4.4
-        ports:
-            - '27017:27017'
-        env_file:
-            - ./.env.local
-        volumes:
-            - dev-mongo_data:/data/db
-            - dev-mongo_config_data:/data/configdb
-            - ./mongo-init.sh:/docker-entrypoint-initdb.d/mongo-init.sh:ro
+version: '3.8'
 
-    dev-mongo-express:
-        image: mongo-express:latest
-        ports:
-            - '8081:8081'
-        env_file:
-            - .env.local
-        depends_on:
-            - dev-mongodb
+services:
+  dev-mongodb:
+    image: mongo:latest
+    ports:
+      - '27017:27017'
+    env_file:
+      - ./.env.local
+    volumes:
+      - dev-mongo_data:/data/db
+      - dev-mongo_config_data:/data/configdb
+      - ./mongo-init.sh:/docker-entrypoint-initdb.d/mongo-init.sh:ro
+
+  dev-mongo-express:
+    image: mongo-express:latest
+    ports:
+      - '8081:8081'
+    env_file:
+      - ./.env.local
+    depends_on:
+      - dev-mongodb
 
 volumes:
-    dev-mongo_data:
-    dev-mongo_config_data:
+  dev-mongo_data:
+  dev-mongo_config_data:

@@ -9,6 +9,18 @@ export interface IBook {
   authorId: Types.ObjectId
   genres: []
   imageUrl: string
+  createdAt: Date
+  updatedAt: Date
+}
+
+export interface IBookSerialized extends Omit<
+  IBook,
+  "_id" | "createdAt" | "updatedAt" | "authorId"
+> {
+  _id: string
+  authorId: string
+  createdAt: string
+  updatedAt: string
 }
 
 export const bookSchema = new Schema(
